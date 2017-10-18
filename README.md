@@ -1,24 +1,26 @@
-# README
+# PURPOSE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a tecnical test for evaluating Ruby on Rails skills to work in poder.IO.  To do the test, please read first how this gem works:
 
-Things you may want to cover:
+https://github.com/influitive/apartment
 
-* Ruby version
 
-* System dependencies
+# INSTRUCTIONS
 
-* Configuration
 
-* Database creation
+* Fork this repository
 
-* Database initialization
+* Run the tests:
 
-* How to run the test suite
+rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+* You'll see that all the test passes, but that's because the controllers are mocked.
 
-* Deployment instructions
+* To complete the test, just implement the 4 TODOs you'll find in this project.  Just run a:
 
-* ...
+grep -r TODO app/ spec/
+
+* Once you implement what is requested and everything is umocked, run again the tests.  Tests should pass again.
+
+* Commit and push you changes on your forked repository.
+
