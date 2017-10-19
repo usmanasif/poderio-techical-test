@@ -4,4 +4,10 @@ FactoryGirl.define do
     password '123456'
     token '123'
   end
+
+  factory :user_2, class: User do
+    login 'hernan1'
+    password '123456'
+    token '345'
+  end
 end

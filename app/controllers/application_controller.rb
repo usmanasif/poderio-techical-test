@@ -3,11 +3,17 @@ class ApplicationController < ActionController::Base
 
   before_action :set_tenant
 
+  protected
+
   def set_tenant
-    # TODO: Unmock / complete this
-    if params[:token] == '123'
-      # Switch to the correct tenant based on token
-    end
+    Apartment::Tenant.switch!(current_tenant.tenant_key)
   end
 
+  def current_user
+    @current_user ||= User.find_by(token: params[:token])
+  end
+
+  def current_tenant
+    @current_tenant ||= current_user.tenant
+  end
 end
