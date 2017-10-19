@@ -8,7 +8,7 @@ describe 'Tenants API' do
   # Uncomment this creating factory for user_1 belonging to tenant_1. Remember to create User model
   # Look at params_hash object to make it fit properly.
 
-  #let!(:user_1) {create(:user_1)}
+  let!(:user_1) {create(:user_1, { tenant: tenant_1 })}
 
   describe "POST #authenticate" do
 

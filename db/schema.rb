@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018220025) do
+ActiveRecord::Schema.define(version: 20171019132711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20171018220025) do
     t.string   "tenant_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "login",      null: false
+    t.string   "password",   null: false
+    t.string   "token"
+    t.integer  "tenant_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["login", "password"], name: "index_users_on_login_and_password", using: :btree
+    t.index ["tenant_id"], name: "index_users_on_tenant_id", using: :btree
+    t.index ["token"], name: "index_users_on_token", using: :btree
   end
 
 end
